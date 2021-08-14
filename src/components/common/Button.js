@@ -1,7 +1,7 @@
-function Button (){
+function Button (props){
 
     return(
-        <button>im a button</button>
+        <button type={props.type}>{props.label}</button>
     )
 }
 
