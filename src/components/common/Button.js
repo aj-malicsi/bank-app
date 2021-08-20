@@ -11,8 +11,19 @@ function Button (props){
 
     }
 
+    const logout = () => {
+        console.log("logout")
+        props.setLoggedIn("")
+        
+    }
+    
+    if(props.function === "logout")
+        return(
+            <button onClick={logout} type={props.type}>{props.label}</button>
+        )
+
     return(
-        <button type={props.type}>{props.label}</button>
+        <button type={props.type}>empty</button>
     )
     
 }

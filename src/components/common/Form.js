@@ -1,12 +1,11 @@
-import Button from "./Button";
-import Input from "./Input";
+
 import { useState } from "react";
 
 
 
-function handleChange(event){
-    // setState
-}
+
+
+// let users = props.users
 
 function Form(props){
 
@@ -14,16 +13,26 @@ function Form(props){
     const [balance, setBalance] = useState(0)
 
 
-    const handleSubmit = (e) => {
+    const handleRegisterSubmit = (e) => {
         e.preventDefault()
         const bankUser = { name, balance }
-        console.log(bankUser)
+
+        let updateUsers = props.users
+        updateUsers.push(bankUser)
+        
+        props.setUsers([...updateUsers])
+        
+
     }
 
+    
 
+    console.log(props.users)
+
+    if(props.page === "register")
     return(
         <>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleRegisterSubmit}>
             <label>Enter Name:</label>
             <input 
             type="text" 
@@ -38,12 +47,84 @@ function Form(props){
             value={balance}
             onChange={(e) => setBalance(e.target.value)}
             />
-            <button>Create</button>
-            
-
-            
+            <button type="submit">Create</button>    
         </form>
         </>
+    )
+
+    const handleTransactionSubmit = (e) =>{
+        e.preventDefault()
+
+    }
+
+    if(props.page === "transaction")
+    return(
+        <>
+        <form onSubmit={handleTransactionSubmit}>
+            <label>Enter Name:</label>
+            <input 
+            type="text" 
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            />
+
+            <label>Enter Initial Balance:</label>
+            <input
+            type="number"
+            value={balance}
+            onChange={(e) => setBalance(e.target.value)}
+            />
+            <button type="submit">Create</button>    
+        </form>
+        </>
+    )
+
+    
+    function findUser(){
+        let users = props.users
+        
+        for(let i = 0; i < users.length; i++){
+            if(name === users[i].name)
+                return true;
+        }
+
+        return false;
+    }
+
+    const handleLoginSubmit = (e) =>{
+        e.preventDefault()
+        if(findUser()){
+            console.log(name)
+            props.setLoggedIn(name)
+            
+        }     
+        else
+            console.log("user doesn't exist")
+
+    } 
+    
+    
+    if(props.page === "login")
+    return(
+        <>
+        <form onSubmit={handleLoginSubmit}>
+            <label>Enter Name:</label>
+            <input 
+            type="text" 
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            />
+
+            <button type="submit">Login</button>    
+        </form>
+        </>
+    )
+    
+
+    return(
+        <p>empty form</p>
     )
 }
 

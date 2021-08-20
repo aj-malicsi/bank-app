@@ -1,17 +1,24 @@
 import Title from "../common/Title"
-import Input from "../common/Input"
-import Button from "../common/Button"
+
+import Form from "../common/Form"
 
 
 
-function Login(){
+function Login(props){
+
+    
 
     return(
         <>
         <Title value="Login Page"/>
-        <Input type="text" value="Username"/>
-        <Input type="password" value="Password"/>
-        <Button type="submit" label="Login"/>
+        <Form 
+        page="login" 
+        users={props.users} 
+        setUsers={props.setUsers} 
+        loggedIn = {props.loggedIn}
+        setLoggedIn = {props.setLoggedIn}
+        />
+
         </>
     )
 }
