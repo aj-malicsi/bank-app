@@ -11,6 +11,7 @@ function App() {
 
   const [users, setUsers] = useState([])
   const [loggedIn, setLoggedIn] = useState("")
+  const [isClicked, setIsClicked] = useState(false)
 
   console.log(loggedIn,"is logged in")
   
@@ -42,13 +43,16 @@ function App() {
       users = {users} 
       setUsers={setUsers}
       loggedIn = {loggedIn} 
-      setLoggedIn = {setLoggedIn}/>}
+      setLoggedIn = {setLoggedIn}
+      isClicked = {isClicked}
+      setIsClicked = {setIsClicked}/>}
 
-      {/* <Display
+      {isClicked && 
+      <Display
       users = {users} 
       setUsers = {setUsers} 
-      />
-       */}
+      />}
+      
     </div>
   );
 }
