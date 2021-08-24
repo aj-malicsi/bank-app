@@ -1,5 +1,5 @@
 import Button from "../common/Button";
-import Form from "../common/Form";
+import DisplayButton from "../common/DisplayButton";
 import Title from "../common/Title";
 import DepositForm from "../Transaction/DepositForm";
 import TransferForm from "../Transaction/TransferForm";
@@ -40,7 +40,17 @@ function Transaction(props){
         setLoggedIn = {props.setLoggedIn}
         type = "button"
         label = "Log Out"/>
+
+        <DisplayButton
+        users={props.users} 
+        setUsers={props.setUsers}
+        isClicked = {props.isClicked}
+        setIsClicked = {props.setIsClicked}
+        />
+
         </>
+
+        
     )
 }
 

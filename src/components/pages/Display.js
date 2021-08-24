@@ -2,20 +2,26 @@ import { useState } from "react";
 
 function Display(props){
 
-    for(let i = 0; i < props.users.length; i++){
+    const users = props.users
 
-        return(
-            <>
-            <p>name: {props.users[i].name}</p>
-            <p>balance: {props.users[i].balance}</p>
-            </>
-        )
-
-    }
+    
 
     return(
-        <p>Display</p>
+        <>
+        <p>display</p>
+
+        {users.map(user =>(
+                <div key={user.name}>   
+                    <p>name:{user.name}</p>
+                    <p>balance:{user.balance}</p>
+            
+                </div>
+            ))}
+       
+        </>
+        
     )
+        
 }
 
 export default Display
