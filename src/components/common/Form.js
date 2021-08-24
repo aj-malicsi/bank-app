@@ -27,8 +27,6 @@ function Form(props){
 
     
 
-    console.log(props.users)
-
     if(props.page === "register")
     return(
         <>
@@ -57,28 +55,7 @@ function Form(props){
 
     }
 
-    if(props.page === "transaction")
-    return(
-        <>
-        <form onSubmit={handleTransactionSubmit}>
-            <label>Enter Name:</label>
-            <input 
-            type="text" 
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            />
-
-            <label>Enter Initial Balance:</label>
-            <input
-            type="number"
-            value={balance}
-            onChange={(e) => setBalance(e.target.value)}
-            />
-            <button type="submit">Create</button>    
-        </form>
-        </>
-    )
+    
 
     
     function findUser(){
