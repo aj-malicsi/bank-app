@@ -8,6 +8,17 @@ function TransferForm(props){
 
     const user = props.loggedIn
     const users = props.users
+    let balance = 0;
+
+    const setBalance = () =>{
+        for(let i = 0; i < users.length; i++){
+            if(users[i].name === user)
+                balance = users[i].balance
+        }
+
+    }
+
+    setBalance()
 
 
     const balanceCheck = () => {
@@ -64,6 +75,8 @@ function TransferForm(props){
             <input
             type="number"
             value={amount}
+            min="1"
+            max={balance}
             onChange={(e) => setAmount(e.target.value)}
             />
 
