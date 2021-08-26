@@ -32,8 +32,10 @@ function DepositForm(props){
             <input
             type="number"
             value={deposit}
+            min="1"
             onChange={(e) => setDeposit(e.target.value)}
             />
+            <br></br>
             <button type="submit">Deposit</button>    
         </form>
         </>

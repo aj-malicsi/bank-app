@@ -4,7 +4,7 @@ import Display from './components/pages/Display'
 import Login from './components/pages/Login'
 import Register from './components/pages/Register'
 import Transaction from './components/pages/Transaction'
-
+import Image from './components/common/Image'
 
 
 function App() {
@@ -25,6 +25,8 @@ function App() {
       
       <Title value="Ye Olde Banking App"/>
 
+    
+      {!loggedIn && <Register users = {users} setUsers = {setUsers}/>}
       {!loggedIn && 
       <Login 
       users = {users} 
@@ -32,10 +34,6 @@ function App() {
       loggedIn = {loggedIn} 
       setLoggedIn = {setLoggedIn}
       />}
-
-      
-      
-      {!loggedIn && <Register users = {users} setUsers = {setUsers}/>}
       
       
       {loggedIn && 
@@ -52,6 +50,8 @@ function App() {
       users = {users} 
       setUsers = {setUsers} 
       />}
+
+      
       
     </div>
   );

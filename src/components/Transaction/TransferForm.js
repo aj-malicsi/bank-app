@@ -73,6 +73,7 @@ function TransferForm(props){
             value={transferUser}
             onChange={(e) => setTransferUser(e.target.value)}
             />
+            <br></br>
 
             <button type="submit">Transfer</button>    
         </form>
