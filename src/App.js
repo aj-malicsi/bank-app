@@ -1,5 +1,6 @@
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from 'react'
-// import { useForm } from "react-hook-form";
 import Title from './components/common/Title'
 import Display from './components/pages/Display'
 import Login from './components/pages/Login'
@@ -56,14 +57,20 @@ function App() {
       setUsers = {setUsers} 
       />} */}
 
-      <RegisterForm 
-      users = {users} 
-      setUsers = {setUsers} 
-      loggedIn = {loggedIn} 
-      setLoggedIn = {setLoggedIn}
-      />
+      
 
-
+    <Router>
+      <Routes>
+        <Route exact path="/register" 
+               element={<RegisterForm
+                        users = {users} 
+                        setUsers = {setUsers} 
+                        loggedIn = {loggedIn} 
+                        setLoggedIn = {setLoggedIn} />
+                        }>
+        </Route>
+      </Routes>
+    </Router>
 
       
       
