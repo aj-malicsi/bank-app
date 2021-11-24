@@ -1,10 +1,6 @@
 
 import { useState } from "react";
 
-
-
-
-
 // let users = props.users
 
 function Form(props){
@@ -31,21 +27,26 @@ function Form(props){
     return(
         <>
         <form onSubmit={handleRegisterSubmit}>
-            <label>Enter Name:</label>
+            <label className="text-white" >Enter Name:</label>
             <input 
+            className="bg-yellow-100 rounded m-1 p-2 h-8"
             type="text" 
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
             />
+            <br/>
 
-            <label>Enter Initial Balance:</label>
+            <label className="text-white" >Enter Initial Balance:</label>
             <input
+            className="bg-yellow-100 rounded m-1 p-2 h-8"
             type="number"
             value={balance}
             onChange={(e) => setBalance(e.target.value)}
             />
-            <button type="submit">Create</button>    
+            <br/>
+            <button className="rounded bg-green-800 hover:bg-green-600 text-gray-100 p-1"
+            type="submit">CREATE</button>    
         </form>
         </>
     )
@@ -85,17 +86,22 @@ function Form(props){
     if(props.page === "login")
     return(
         <>
+        <div className="h-1/2 flex justify-center items-center">
         <form onSubmit={handleLoginSubmit}>
-            <label>Enter Name:</label>
+            <label className="text-white" >Enter Name:</label>
             <input 
+            className="bg-yellow-100 rounded m-1 p-2 h-8"
             type="text" 
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
             />
-
-            <button type="submit">Login</button>    
+            <br/>
+            <button className="ml-36 my-1
+            bg-green-800 hover:bg-green-600 text-gray-100 p-1 rounded" type="submit">Log In</button>    
+           
         </form>
+        </div>
         </>
     )
     

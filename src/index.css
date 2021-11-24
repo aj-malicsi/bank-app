@@ -1,48 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
   font-family: 'VT323', monospace;
   font-size: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  
 }
 
-.title {
-  font-size: 72px;
-  text-align: center;
-  
-  /* width: 40vw; */
-  height: 10vh;
-  margin:auto;
-  color:#ffd800;
-  background-color: #42280E;
-}
-
-
-.welcome{
-  font-size: 36px;
-  padding:0;
-
-}
-.pile{
-  display: flex;
-  /* margin-left: 56vw; */
-  margin: -10vh 56vw;
-}
-
-.coin{
-  margin: -10vh 56vw;
-  /* border:1px solid black; */
-
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1{
+  font-size: 40px;
 }
